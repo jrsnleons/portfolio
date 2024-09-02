@@ -75,7 +75,7 @@ module.exports = {
                 spotlight: "spotlight 2s ease .75s 1 forwards",
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
-                "infinite-scroll": "infinite-scroll 25s linear infinite",
+                "infinite-scroll": "infinite-scroll 50s linear infinite",
             },
             borderRadius: {
                 lg: `var(--radius)`,
