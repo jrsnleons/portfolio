@@ -8,13 +8,38 @@ import { Spotlight } from "./ui/Spotlight";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import { useToast } from "@/components/hooks/use-toast";
+import { MdEmail } from "react-icons/md";
+
 const Hero = () => {
+    const { toast } = useToast();
+
     const desc = [
         "Developer",
         "Video Editor",
         "Graphic Designer",
         "Sound Technician",
     ];
+
+    const textToCopy = "jrsnleons@gmail.com";
+
+    const handleCopy = async (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
+        e.preventDefault();
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            toast({
+                title: "Copied email successfully!",
+            });
+        } catch (err) {
+            toast({
+                title: "Error copying",
+                description: (err as Error).message,
+                variant: "destructive",
+            });
+        }
+    };
 
     return (
         <main>
@@ -43,7 +68,7 @@ const Hero = () => {
                                 width={500}
                                 height={500}
                                 alt="profile-img"
-                                src="/profile.jpeg"
+                                src="/profile.png"
                                 loading="lazy"
                             />
                         </CardItem>
@@ -74,15 +99,28 @@ const Hero = () => {
                                 <a href="https://github.com/jrsnleons">
                                     <FaGithub className="cursor-pointer" />
                                 </a>
+                                <button onClick={handleCopy}>
+                                    <MdEmail className="cursor-pointer" />
+                                </button>
                             </CardItem>
                             <CardItem
                                 translateZ={20}
                                 className="px-4 py-2 rounded-xl dark:text-black text-white text-xs font-bold"
                             >
                                 <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10B981_0%,#064E3b_50%,#10B981_100%)]" />
                                     <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                        Download CV
+                                        <a
+                                            href="/LEONES_CV.pdf"
+                                            download="LEONES_CV"
+                                            onClick={() => {
+                                                toast({
+                                                    title: "CV pdf downloaded!",
+                                                });
+                                            }}
+                                        >
+                                            Download CV
+                                        </a>
                                     </span>
                                 </button>
                             </CardItem>

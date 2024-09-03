@@ -43,7 +43,7 @@ const items = [
         badge: ["Next", "React", "Tailwind", "framer", "shadcn", "acceternity"],
         url: "/portfolio.png",
         gitlink: "https://github.com/jrsnleons/portfolio",
-        applink: "",
+        applink: "https://jrsnleons.vercel.app",
     },
     {
         title: "Cold Brew Coffee",
