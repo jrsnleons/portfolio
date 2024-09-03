@@ -33,7 +33,7 @@ const logos = [
     { icon: <FaCss3Alt />, alt: "CSS" },
     { icon: <RiTailwindCssFill />, alt: "Tailwind CSS" },
     { icon: <RiReactjsLine />, alt: "React JS" },
-    { icon: <RiNextjsFill />, alt: "CSS" },
+    { icon: <RiNextjsFill />, alt: "Next JS" },
     { icon: <GrMysql />, alt: "mySQL" },
     { icon: <FaGithub />, alt: "Git and Github" },
     { icon: <FaLinux />, alt: "Linux" },
