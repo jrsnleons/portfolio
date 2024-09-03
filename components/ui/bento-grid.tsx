@@ -56,7 +56,7 @@ export const BentoGridItem = ({
                 </div>
                 <div className="flex flex-wrap gap-1 text-xs mt-2">
                     {badge?.map((i) => (
-                        <Badge variant="outline">{i}</Badge>
+                        <Badge key={i} variant="outline">{i}</Badge>
                     ))}
                 </div>
                 <div className="flex p-2 pl-0 gap-2">
